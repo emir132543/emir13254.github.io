@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoşseven Firması</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff; /* Metin rengi beyaz */
+            overflow: hidden; /* Taşmayı gizle */
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Arka planda kalması için */
+            overflow: hidden;
+        }
+        .content {
+            position: relative;
+            z-index: 1; /* İçeriğin ön planda görünmesi için */
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #ffcc00; /* Başlık rengi sarı */
+        }
+        p {
+            font-size: 18px;
+            color: #ffffff; /* Paragraf rengi beyaz */
+        }
+        .info-box {
+            background-color: rgba(0, 0, 0, 0.7); /* Bilgi kutusunun arka plan rengi yarı saydam siyah */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .logo-container {
+            display: flex; /* Flexbox ile yan yana yerleştirme */
+            justify-content: center; /* Ortalamak için */
+            position: relative; /* Konumlandırma için */
+            margin-top: 0; /* Üstten boşluk kaldırıldı */
+        }
+        .logo {
+            max-width: 400px; /* Logo boyutu */
+            height: auto; /* Yüksekliği otomatik ayarla */
+            opacity: 0; /* Başlangıçta görünmez */
+            transition: opacity 2s ease; /* Geçiş animasyonu */
+        }
+        .logo1 {
+            transform: translateY(-100vh); /* Yukarıdan gizli (tam ekran yüksekliği kadar) */
+            transition: transform 2s ease; /* Yukarıdan düşme animasyonu */
+        }
+        .logo2 {
+            transform: translateX(100vw); /* Sağdan gizli (tam ekran genişliği kadar) */
+            transition: transform 2s ease; /* Sağdan gelme animasyonu */
+        }
+        .show .logo1 {
+            opacity: 1; /* Görünür hale getir */
+            transform: translateY(0); /* Yukarıdan aşağıya hareket ettir */
+        }
+        .show .logo2 {
+            opacity: 1; /* Görünür hale getir */
+            transform: translateX(0); /* Sağdan sola hareket ettir */
+        }
+        .button-container {
+            margin-top: 20px; /* Butonlar için üstten boşluk */
+        }
+        .button {
+            background-color: #ffcc00; /* Buton rengi sarı */
+            color: #000; /* Buton metin rengi siyah */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none; /* Alt çizgiyi kaldır */
+            display: inline-block; /* Butonları yan yana yerleştirmek için */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background">
+        <video autoplay muted loop>
+            <source src="https://cdn.pixabay.com/video/2020/05/13/38998-420224615_large.mp4" type="video/mp4">
+            Tarayıcınız video etiketini desteklemiyor.
+        </video>
+    </div>
+
+    <div class="content">
+        <div class="logo-container" id="logoContainer">
+            <img src="file:///C:/Users/EM%C4%B0RKAAN/Desktop/hh_%C3%87al%C4%B1%C5%9Fma%20Y%C3%BCzeyi%201.png" alt="Marka 1 Logo" class="logo logo1"> <!-- İlk logo -->
+            <img src="file:///C:/Users/EM%C4%B0RKAAN/Desktop/ho%C5%9Fsevenn_%C3%87al%C4%B1%C5%9Fma%20Y%C3%BCzeyi%201.png" alt="Marka 2 Logo" class="logo logo2"> <!-- İkinci logo -->
+        </div>
+
+        <div class="info-box">
+            <h1>Hoşseven Firması</h1>
+            <p>
+                <strong>Bilgi:</strong> Hoşseven Firması, sektördeki yenilikçi yaklaşımıyla dikkat çekmektedir.
+            </p>
+        </div>
+
+        <div class="button-container">
+            <button class="button" onclick="redirectTo('https://www.example.com/urunler')">Ürünlerimiz</button>
+            <button class="button" onclick="redirectTo('https://www.example.com/hakkimizda')">Hakkımızda</button>
+            <button class="button" onclick="redirectTo('https://www.example.com/iletisim')">İletişim</button>
+            <button class="button" onclick="redirectTo('https://www.example.com/hizmetler')">Hizmetlerimiz</button>
+            <button class="button" onclick="redirectTo('https://www.example.com/referanslar')">Referanslar</button>
+            <button class="button" onclick="redirectTo('https://www.example.com/blog')">Blog</button>
+        </div>
+    </div>
+
+    <script>
+        // Sayfa yüklendiğinde logoları göster
+        window.onload = function() {
+            document.getElementById('logoContainer').classList.add('show');
+        };
+
+        // Yönlendirme fonksiyonu
+        function redirectTo(url) {
+            window.location.href = url; // Belirtilen URL'ye yönlendir
+        }
+    </script>
+</body>
+</html>
